@@ -24,6 +24,15 @@ body {
   background-color: lightgrey;
 }
 
+.explanatory {
+  color: black;
+  min-height: 100px;
+  width: 80%;
+  margin: 0 auto 10px auto;
+  border: 1px dashed black;
+  padding: 5px;
+}
+
 header {
   max-height: 10%;
 }
