@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Any text in between these groups of symbols is a comment - it will be ignored by the browser, but visible to you as a fellow developer. These are handy for making notes to yourself and other developers. -->
+
+<!-- This is a great general reference for HTML elements and their usage: https://developer.mozilla.org/en/docs/Web/HTML/Element -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- The <title> element sets the text that will appear in the browser's tab -->
+    <title>Pixel Pets</title>
+    <!-- Add a link to our stylesheet - the browser needs to know how to style your content -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- A div that will wrap our entire page's content: -->
+    <div class="container">
+      <!-- <header> is a semantic HTML div -->
+      <header>
+        <h1>Pixel Pets</h1>
+      </header>
+      <!-- A div that will wrap the main body of content: -->
+      <div class="main">
+        <div class="panel">
+          <h2>Select</h2>
+          <!-- We're giving this element an ID so that we can easily select it using JavaScript. IDs must be unique to the page. Same rationale applies to all other elements on the page that have IDs - they're elements that the user will interact with, that we need to identify easily in our JavaScript, and will definitely be unique to the page. -->
+
+          <!-- The select menu will appear as a 'dropdown' menu. Users will be able to select from a list of options, which will be populated by the <options> tags nested within the <select> tag. -->
+          <select class="" name="selectPet" id="petSelect">
+            <option value="cat">Cat</option>
+            <option value="raccoon">Raccoon</option>
+            <option value="fox">Fox</option>
+          </select>
+          <button type="button" id="petButton">Change Pet</button>
+        </div>
+
+        <div class="panel">
+          <h2>Play</h2>
+            <img src="http://i.imgur.com/vRmHDi3.gif" id="animal"alt="" />
+            <p id="speak"></p>
+        </div>
+
+        <div class="panel">
+          <h2>Vocabulary</h2>
+          <textarea name="name" id="phraseInput"></textarea>
+          <input type="button" id="phraseButton" value="Add Phrase">
+          <hr>
+          <!-- This div will be empty, but users will be able to add phrases to the div afer the user's entered them into the #phraseInput element and clicked the #phraseButton element. -->
+          <div id="phraseList"></div>
+        </div>
+
+      </div>
+
+      <footer>
+        <p>You made this as part of the Digital Marketing — Coding Bootcamp</p>
+      </footer>
+
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>

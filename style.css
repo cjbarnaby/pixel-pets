@@ -1,0 +1,78 @@
+body {
+  background-color: grey;
+  font-family: monospace;
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.panel {
+  vertical-align: top;
+  height: 100%;
+  width: 30%;
+  display: inline-block;
+}
+
+.panel:nth-of-type(odd) {
+  background-color: lightgrey;
+}
+
+header {
+  max-height: 10%;
+}
+
+footer {
+  max-height: 10%;
+  padding: 10px;
+}
+
+.main {
+  height: 80%;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#speak {
+  font-style: oblique;
+  font-weight: 100;
+}
+
+img:active {
+  animation-duration: 500ms;
+  animation-name: jump;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+textarea, input, select, button, hr {
+  width: 50%;
+}
+
+textarea {
+  height: 100px;
+}
