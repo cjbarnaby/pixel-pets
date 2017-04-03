@@ -1,4 +1,5 @@
 body {
+  /* The first four properties we're setting here are all 'inherited' CSS properties, meaning they will apply to all 'children' elements of the 'body' element (ie, all elements nested inside the body element, ie, EVERYTHING). This cascading inheritence will only be stopped if there is a more specific, contradictory declaration down the line (eg, when we set the color property of the .explanatory elements to black later on in this file.)*/
   background-color: grey;
   font-family: monospace;
   text-align: center;
@@ -7,6 +8,7 @@ body {
   padding: 0;
 }
 
+/* I want all our content to be wrapped in a div that has a maximum width of 960 pixels (ie, it can be smaller than 960 pixels on a small device, but it will never be larger than 960 pixels on a bigger device). I also want it to be 100% of the viewport height (ie, the browser window). We'll center this div using margin: 0 auto (eg - set the top and bottom margins to be 0, and make the left and right margins equal to each other)*/
 .container {
   max-width: 960px;
   height: 100vh;
@@ -15,23 +17,35 @@ body {
 
 .panel {
   vertical-align: top;
+  /*When we use % units for width and height properties, we are expressing the width/height as a percentage of the width/height of the element's parent, not the page itself or the browser window*/
   height: 100%;
   width: 30%;
+  /*by default, <div>s will display as 'blocks' (one stacked on top of the other), but we want these to display "inline" with each other*/
   display: inline-block;
 }
 
+/*Give every second / odd numbered element with the class of .panel a lightgrey background. */
 .panel:nth-of-type(odd) {
   background-color: lightgrey;
 }
 
 .explanatory {
+  /*The color property sets the text color*/
   color: black;
   min-height: 100px;
   width: 80%;
   margin: 0 auto 10px auto;
+  /*Let's give this a thin, dashed, black border with rounded edges*/
   border: 1px dashed black;
   border-radius: 10px;
   padding: 5px;
+  /* The transition property specifies how any changes to the element's styles will be handled. In this case, we want all transitions (eg, changes to the background color on mouse hover) to ease in over 1 second */
+  transition: 1s all ease;
+}
+
+/* When someone hovers over an element with the class of explanatory, the background color of that element will change to white. */
+.explanatory:hover {
+  background-color: white;
 }
 
 header {
@@ -62,10 +76,12 @@ p {
 }
 
 img:active {
+  /* When an img element is 'active' (clicked on), we want to animate the element over a period of 500ms using the 'jump' animation, defined below.*/
   animation-duration: 500ms;
   animation-name: jump;
 }
 
+/*Keyframes let us animate particular properties, and we can use the percentage blocks to say, for example, "when the animation is 20% of the way through (eg, 20% of 500ms, in this case), translate the element along the Y axis by -20px (ie, move it up the page 20px)"*/
 @keyframes jump {
   0% {
     transform: translateY(0px);
@@ -73,7 +89,6 @@ img:active {
   20% {
     transform: translateY(-20px);
   }
-
   100% {
     transform: translateY(0px);
   }
