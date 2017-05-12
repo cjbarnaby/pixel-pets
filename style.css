@@ -16,10 +16,11 @@ body {
 }
 
 .panel {
+  font-size: 14px;
   vertical-align: top;
   /*When we use % units for width and height properties, we are expressing the width/height as a percentage of the width/height of the element's parent, not the page itself or the browser window*/
   height: 100%;
-  width: 30%;
+  width: calc(100% / 3);
   /*by default, <div>s will display as 'blocks' (one stacked on top of the other), but we want these to display "inline" with each other*/
   display: inline-block;
 }
@@ -59,6 +60,7 @@ footer {
 
 .main {
   height: 80%;
+  font-size: 0;
 }
 
 h1 {
